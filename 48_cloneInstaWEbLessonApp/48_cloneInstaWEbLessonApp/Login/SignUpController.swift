@@ -19,52 +19,14 @@ class SignUpController: UIViewController {
         return buton
         }()
     
-     private let userNameTextField: UITextField = {
-           let tf = UITextField()
-           tf.placeholder = "Name ..."
-           tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-           tf.borderStyle = .roundedRect
-           tf.font = UIFont.systemFont(ofSize: 18)
-           return tf
-       }()
+    private let userNameTextField = UITextField.setupTextField(plaseholder: "Name...", secureTextEnry: false)
+    private let emailTextField = UITextField.setupTextField(plaseholder: "Email...", secureTextEnry: false)
+    private let fullNameTextField = UITextField.setupTextField(plaseholder: "Full name...", secureTextEnry: false)
+    private let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: true)
     
-    private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Email ..."
-        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-        tf.borderStyle = .roundedRect
-        tf.font = UIFont.systemFont(ofSize: 18)
-        return tf
-    }()
+    private let sighnUpButton = UIButton.setupButton(title: "Sign Up", color: UIColor.rgb(red: 149, green: 204, blue: 244))
     
-    private let fullNameTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Full Name ..."
-        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-        tf.borderStyle = .roundedRect
-        tf.font = UIFont.systemFont(ofSize: 18)
-        return tf
-    }()
-    
-    private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Enter p asword ..."
-        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-        tf.borderStyle = .roundedRect
-        tf.font = UIFont.systemFont(ofSize: 18)
-        return tf
-    }()
-    
-     private let sighnUpButton: UIButton = {
-           let button = UIButton(type: .system)
-           button.setTitle("Sign Up", for: .normal)
-           button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-           button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
-           button.layer.cornerRadius = 6
-           return button
-       }()
-    
-    
+        
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         //первая часть кнопки c разным цвето текста
@@ -87,14 +49,15 @@ class SignUpController: UIViewController {
     }
     
     @objc fileprivate func goToSignInController() {
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - configure components
     
     func configureViewComponents() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        //navigationController?.navigationBar.isHidden = true
         view.addSubview(plusFotoButton)
         plusFotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 40, bottom:0, right: 40))
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */; };
 		A329F896246EB444000FCA09 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329F895246EB444000FCA09 /* SignUpController.swift */; };
 		A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A87246D5BF200836CE0 /* AppDelegate.swift */; };
 		A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A89246D5BF200836CE0 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A329F895246EB444000FCA09 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A3D17A84246D5BF200836CE0 /* 48_cloneInstaWEbLessonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 48_cloneInstaWEbLessonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D17A87246D5BF200836CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D17A9F246D656E00836CE0 /* Utils.swift */,
+				A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				A329F896246EB444000FCA09 /* SignUpController.swift in Sources */,
 				A3D17A9D246D5EBD00836CE0 /* LoginViewController.swift in Sources */,
+				A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */,
 				A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */,
 				A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */,
 				A3D17AA0246D656E00836CE0 /* Utils.swift in Sources */,

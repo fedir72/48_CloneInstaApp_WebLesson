@@ -19,8 +19,7 @@ class LoginViewController: UIViewController {
         logoImageView.contentMode = .scaleToFill
         view.addSubview(logoImageView)
         logoImageView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 200, height: 70))
-        logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        logoImageView.centerInSuperView()
         view.backgroundColor = UIColor.rgb(red: 0, green: 120, blue: 175)
         return view
       
@@ -28,42 +27,19 @@ class LoginViewController: UIViewController {
     
     //MARK: - textfields
     
-    private let mailTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Enter Email ..."
-        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-        tf.borderStyle = .roundedRect
-        tf.font = UIFont.systemFont(ofSize: 18)
-        return tf
-    }()
-    
-      private let passwordTextField: UITextField = {
-          let tf = UITextField()
-          tf.placeholder = "Password ..."
-          tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
-          tf.borderStyle = .roundedRect
-          tf.isSecureTextEntry = true //текст не виден при воде
-          tf.font = UIFont.systemFont(ofSize: 18)
-          return tf
-      }()
+    private let mailTextField = UITextField.setupTextField(plaseholder: "Enter mail...", secureTextEnry: false)
+    private let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: true)
     
     //MARK: - Button
-    
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
-        button.layer.cornerRadius = 6
-        return button
-    }()
+     
+    private let loginButton = UIButton.setupButton(title: "  Login", color: UIColor.rgb(red: 149, green: 204, blue: 244))
     
      //MARK: - Button "Do not have account"
     
     private let doNotHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         //первая часть кнопки c разным цвето текста
-        var attributetitle = NSMutableAttributedString(string: "Dont h ave an account ?", attributes: [.font: UIFont.systemFont(ofSize: 18),.foregroundColor: UIColor.lightGray])
+        var attributetitle = NSMutableAttributedString(string: "  Dont h ave an account ?", attributes: [.font: UIFont.systemFont(ofSize: 18),.foregroundColor: UIColor.lightGray])
         //вторая часть
         attributetitle.append(NSAttributedString(string: "Sign UP", attributes: [.font: UIFont.systemFont(ofSize: 18 , weight: .heavy), .foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)]))
         button.setAttributedTitle(attributetitle, for: .normal)
@@ -83,7 +59,11 @@ class LoginViewController: UIViewController {
     
     @objc fileprivate func goToSignUPController() {
         let vc = SignUpController()
-            navigationController?.pushViewController(vc, animated: true)
+        let navcontroll = UINavigationController(rootViewController: vc)
+        //navigationController?.pushViewController(vc, animated: true)
+        navcontroll.modalPresentationStyle = .fullScreen
+        present(navcontroll,animated: true,completion: nil)
+        
     }
     
     //MARK: - конфигурация элементов контроллера

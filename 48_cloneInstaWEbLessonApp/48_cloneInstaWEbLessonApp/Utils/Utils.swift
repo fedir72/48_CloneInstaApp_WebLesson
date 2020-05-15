@@ -9,6 +9,39 @@
 import Foundation
 import UIKit
 
+//MARK: - расширение для создания текстфилдов
+
+extension UITextField {
+    class func setupTextField (plaseholder: String,secureTextEnry: Bool) -> UITextField {
+         let tf = CustomTextField(padding: 20)
+               tf.placeholder = plaseholder
+               tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
+               tf.isSecureTextEntry = secureTextEnry
+               tf.layer.cornerRadius = 22
+               tf.font = UIFont.systemFont(ofSize: 18)
+               return tf
+        }
+}
+
+
+
+
+//MARK: - расширение для создания батонов
+
+extension UIButton {
+    class func setupButton(title: String,color: UIColor) -> UIButton {
+         
+   let button = UIButton(type: .system)
+               button.setTitle(title, for: .normal)
+               button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+               button.backgroundColor = color
+               button.layer.cornerRadius = 22
+               return button
+    }
+}
+
+
+
 extension UIColor {
   // расширение для цвета
     static func rgb(red: CGFloat, green: CGFloat,blue: CGFloat) -> UIColor {
@@ -90,6 +123,7 @@ extension UIView {
     func centerInSuperView(size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let superviewCenterXAnchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: superviewCenterXAnchor).isActive = true
         }

@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     private let logoContainerView: UIView = {
         
         let view = UIView()
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "insta") .withRenderingMode(.alwaysOriginal) )
+        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "fase") .withRenderingMode(.alwaysOriginal) )
         logoImageView.contentMode = .scaleToFill
         view.addSubview(logoImageView)
         logoImageView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 200, height: 70))
@@ -67,6 +67,8 @@ class LoginViewController: UIViewController {
         //вторая часть
         attributetitle.append(NSAttributedString(string: "Sign UP", attributes: [.font: UIFont.systemFont(ofSize: 18 , weight: .heavy), .foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)]))
         button.setAttributedTitle(attributetitle, for: .normal)
+        button.addTarget(self, action: #selector(goToSignUPController), for: .touchUpInside)
+        
         return button
     }()
 
@@ -77,8 +79,18 @@ class LoginViewController: UIViewController {
       
         
     }
+    //MARK: - переход на сигнапконтроллер
+    
+    @objc fileprivate func goToSignUPController() {
+        let vc = SignUpController()
+            navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: - конфигурация элементов контроллера
+    
     func configureViewComponents() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.isHidden = true//сокрытие навбара навигейшена
         view.addSubview(logoContainerView)
         logoContainerView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: 150))
         

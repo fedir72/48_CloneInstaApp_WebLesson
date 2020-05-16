@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     //MARK: - textfields
     
     private let mailTextField = UITextField.setupTextField(plaseholder: "Enter mail...", secureTextEnry: false)
-    private let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: true)
+    private let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: false)
     
     //MARK: - Button
      
@@ -52,12 +52,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         configureViewComponents()
-      
+        setupTapGesture()
         
     }
     //MARK: - переход на сигнапконтроллер
     
     @objc fileprivate func goToSignUPController() {
+        
         let vc = SignUpController()
         let navcontroll = UINavigationController(rootViewController: vc)
         //navigationController?.pushViewController(vc, animated: true)
@@ -88,7 +89,18 @@ class LoginViewController: UIViewController {
         doNotHaveAccountButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 40, bottom: 50, right: 40))
         }
     
-
-  
+    //MARK: -  tapgesturerecogniser (убрать клаву по нажатию на вью)
+      
+      fileprivate func setupTapGesture() {
+          view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handletaDismiss)))
+          
+      }
+      //MARK: - убрать клавиатуру
+      
+      @objc func handletaDismiss() {
+          view.endEditing(true)
+      }
+      
+      
     
 }

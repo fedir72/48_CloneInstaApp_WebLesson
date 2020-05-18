@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>937377972188-d6cqgu5nq8eubom0jptjlq7qgpi9sqco.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.937377972188-d6cqgu5nq8eubom0jptjlq7qgpi9sqco</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMGqPxkFffgRzdpLEwvwVVr5ZZWZLmYR4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>937377972188</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fedir72.-8-cloneInstaWEbLessonApp</string>
+	<key>PROJECT_ID</key>
+	<string>cloneinstaweblessonapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cloneinstaweblessonapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:937377972188:ios:90575a8d9cb8b1690c1919</string>
+	<key>DATABASE_URL</key>
+	<string>https://cloneinstaweblessonapp.firebaseio.com</string>
+</dict>
+</plist>

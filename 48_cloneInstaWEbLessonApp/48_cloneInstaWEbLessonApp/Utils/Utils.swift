@@ -36,6 +36,7 @@ extension UIButton {
                button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
                button.backgroundColor = color
                button.layer.cornerRadius = 22
+        button.isEnabled = false
                return button
     }
 }

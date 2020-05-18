@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
     
     //MARK: - textfields
     
-    private let mailTextField = UITextField.setupTextField(plaseholder: "Enter mail...", secureTextEnry: false)
-    private let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: false)
+    fileprivate let mailTextField = UITextField.setupTextField(plaseholder: "Enter mail...", secureTextEnry: false)
+    fileprivate let passwordTextField = UITextField.setupTextField(plaseholder: "Password...", secureTextEnry: false)
     
     //MARK: - Button
      

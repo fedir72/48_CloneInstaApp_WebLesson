@@ -11,6 +11,7 @@
 		A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */; };
 		A329F896246EB444000FCA09 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329F895246EB444000FCA09 /* SignUpController.swift */; };
 		A3983BF424715F50005AC37C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3983BF324715F50005AC37C /* GoogleService-Info.plist */; };
+		A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE05DA2472D19000975C68 /* MainTabVC.swift */; };
 		A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A87246D5BF200836CE0 /* AppDelegate.swift */; };
 		A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A89246D5BF200836CE0 /* SceneDelegate.swift */; };
 		A3D17A8F246D5BF200836CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D17A8D246D5BF200836CE0 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A329F895246EB444000FCA09 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A3983BF324715F50005AC37C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3BE05DA2472D19000975C68 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		A3D17A84246D5BF200836CE0 /* 48_cloneInstaWEbLessonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 48_cloneInstaWEbLessonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D17A87246D5BF200836CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D17A89246D5BF200836CE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,11 +82,11 @@
 		A3D17A86246D5BF200836CE0 /* 48_cloneInstaWEbLessonApp */ = {
 			isa = PBXGroup;
 			children = (
-				A3D17A9E246D655400836CE0 /* Utils */,
-				A3D17A9B246D5E7400836CE0 /* Login */,
 				A3D17A87246D5BF200836CE0 /* AppDelegate.swift */,
 				A3D17A89246D5BF200836CE0 /* SceneDelegate.swift */,
 				A3D17A8D246D5BF200836CE0 /* Main.storyboard */,
+				A3D17A9E246D655400836CE0 /* Utils */,
+				A3D17A9B246D5E7400836CE0 /* Login */,
 				A3D17A90246D5BF300836CE0 /* Assets.xcassets */,
 				A3D17A92246D5BF300836CE0 /* LaunchScreen.storyboard */,
 				A3D17A95246D5BF300836CE0 /* Info.plist */,
@@ -98,6 +100,7 @@
 			children = (
 				A3D17A9C246D5EBD00836CE0 /* LoginViewController.swift */,
 				A329F895246EB444000FCA09 /* SignUpController.swift */,
+				A3BE05DA2472D19000975C68 /* MainTabVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */,
 				A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */,
 				A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */,
+				A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */,
 				A3D17AA0246D656E00836CE0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 //MARK: -
 
@@ -21,7 +22,9 @@ class MainTabVC: UITabBarController ,UITabBarControllerDelegate{
          self.delegate = self
         
        createTabBar()
-      
+      //MARK: - вызов проверки пользователя на логин
+      ifUserLogedIn()
+        
     }
     
     //MARK: - settings for tabbar
@@ -29,7 +32,7 @@ class MainTabVC: UITabBarController ,UITabBarControllerDelegate{
     fileprivate func createTabBar() {
         tabBar.tintColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
               
-              let feed = createNavController(viewcontroller: UIViewController(), title: "Feed", selectedImage: #imageLiteral(resourceName: "home"), unselectedImage: #imageLiteral(resourceName: "home"))
+              let feed = createNavController(viewcontroller: FeedController(collectionViewLayout: UICollectionViewLayout()), title: "Feed", selectedImage: #imageLiteral(resourceName: "home"), unselectedImage: #imageLiteral(resourceName: "home"))
               let search = createNavController(viewcontroller: UIViewController(), title: "search", selectedImage: #imageLiteral(resourceName: "search"), unselectedImage: #imageLiteral(resourceName: "search"))
               let newPost = createNavController(viewcontroller: UIViewController(), title: "Post", selectedImage: #imageLiteral(resourceName: "sms"), unselectedImage: #imageLiteral(resourceName: "sms"))
               let likes = createNavController(viewcontroller : UIViewController(), title: "Likes", selectedImage: #imageLiteral(resourceName: "heart"), unselectedImage: #imageLiteral(resourceName: "heart"))
@@ -37,6 +40,23 @@ class MainTabVC: UITabBarController ,UITabBarControllerDelegate{
               
               //MARK: - controllers for tabbar
               viewControllers = [feed,search,newPost,likes,profile]
+        
+        
+    }
+    
+    //MARK: - функция проверки пользователя (залогинен ли пользователь)
+    
+    fileprivate func ifUserLogedIn() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let loginVC = LoginViewController()
+                let navContr = UINavigationController(rootViewController: loginVC)
+                navContr.modalPresentationStyle = .fullScreen
+                self.present(navContr,animated: true,completion: nil)
+            
+            }
+             return
+        }
     }
     
     

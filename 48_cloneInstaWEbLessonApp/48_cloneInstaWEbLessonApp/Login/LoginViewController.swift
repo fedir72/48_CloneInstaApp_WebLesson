@@ -121,9 +121,10 @@ class LoginViewController: UIViewController {
     
     //MARK: - конфигурация элементов контроллера
     
-    func configureViewComponents() {
+    fileprivate func configureViewComponents() {
+       
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-       // navigationController?.navigationBar.isHidden = true//сокрытие навбара навигейшена
+        navigationController?.navigationBar.isHidden = true//сокрытие навбара навигейшена
         view.addSubview(logoContainerView)
         logoContainerView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: 150))
         

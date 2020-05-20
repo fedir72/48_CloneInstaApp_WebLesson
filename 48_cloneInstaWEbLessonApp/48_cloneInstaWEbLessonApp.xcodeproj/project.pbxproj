@@ -10,6 +10,7 @@
 		9DD255BBF36A65F577091416 /* Pods_48_cloneInstaWEbLessonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB10EF51FDE8FD951F32F728 /* Pods_48_cloneInstaWEbLessonApp.framework */; };
 		A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */; };
 		A329F896246EB444000FCA09 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329F895246EB444000FCA09 /* SignUpController.swift */; };
+		A32E4AB72475210C006A0D3A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E4AB62475210C006A0D3A /* FeedController.swift */; };
 		A3983BF424715F50005AC37C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3983BF324715F50005AC37C /* GoogleService-Info.plist */; };
 		A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE05DA2472D19000975C68 /* MainTabVC.swift */; };
 		A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A87246D5BF200836CE0 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		3019DA594C9E8CE411DBB818 /* Pods-48_cloneInstaWEbLessonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-48_cloneInstaWEbLessonApp.release.xcconfig"; path = "Target Support Files/Pods-48_cloneInstaWEbLessonApp/Pods-48_cloneInstaWEbLessonApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A329F895246EB444000FCA09 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		A32E4AB62475210C006A0D3A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		A3983BF324715F50005AC37C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3BE05DA2472D19000975C68 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		A3D17A84246D5BF200836CE0 /* 48_cloneInstaWEbLessonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 48_cloneInstaWEbLessonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,14 @@
 				3019DA594C9E8CE411DBB818 /* Pods-48_cloneInstaWEbLessonApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A32E4AB52475207D006A0D3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A32E4AB62475210C006A0D3A /* FeedController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A3D17A7B246D5BF200836CE0 = {
@@ -98,8 +108,9 @@
 		A3D17A9B246D5E7400836CE0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A3D17A9C246D5EBD00836CE0 /* LoginViewController.swift */,
+				A32E4AB52475207D006A0D3A /* Controllers */,
 				A329F895246EB444000FCA09 /* SignUpController.swift */,
+				A3D17A9C246D5EBD00836CE0 /* LoginViewController.swift */,
 				A3BE05DA2472D19000975C68 /* MainTabVC.swift */,
 			);
 			path = Login;
@@ -245,6 +256,7 @@
 				A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */,
 				A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */,
 				A3D17AA0246D656E00836CE0 /* Utils.swift in Sources */,
+				A32E4AB72475210C006A0D3A /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

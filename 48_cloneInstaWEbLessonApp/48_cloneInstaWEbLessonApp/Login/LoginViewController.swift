@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - Button
      
-    private let loginButton = UIButton.setupButton(title: "  Login", color: UIColor.rgb(red: 149, green: 204, blue: 244))
+    private let loginButton = UIButton.setupButton(title: "Login", color: UIColor.rgb(red: 149, green: 204, blue: 244))
     
      //MARK: - Button "Do not have account"
     
@@ -51,8 +52,59 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.loginButton.isEnabled = true
         configureViewComponents()
         setupTapGesture()
+        handlers()
+    }
+    
+    //MARK: - функция контроля заполнения полей и активации сохранения пользователя
+    
+    fileprivate func handlers() {
+        
+        mailTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
+        loginButton.addTarget(self, action:#selector(handleLogin), for: .touchUpInside)
+    }
+    
+    //MARK: - функция активаци кнопки  loginButton
+    
+    @objc fileprivate func formValidation() {
+        
+        guard mailTextField.hasText,
+            passwordTextField.hasText else {
+                self.loginButton.isEnabled = false
+                self.loginButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+                return
+        }
+        loginButton.isEnabled = true
+        loginButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        
+    }
+    
+    //MARK: - функция срабатывает при нажатии на логинбатон(сохранение пользователя)
+    
+    @objc fileprivate func handleLogin() {
+        
+        print("handle login")
+        guard let email = mailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let error = error {
+                print("failed to login with eror:",error.localizedDescription)
+                return
+            }
+            //переход на майнтабВС
+             
+            print("Sucsesfuly signed user in")
+            let maintabVC = MainTabVC()
+            maintabVC.modalPresentationStyle = .fullScreen
+            self.present(maintabVC,animated: true,completion: nil)
+        }
+        
+        
+        
         
     }
     //MARK: - переход на сигнапконтроллер
@@ -71,7 +123,7 @@ class LoginViewController: UIViewController {
     
     func configureViewComponents() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationController?.navigationBar.isHidden = true//сокрытие навбара навигейшена
+       // navigationController?.navigationBar.isHidden = true//сокрытие навбара навигейшена
         view.addSubview(logoContainerView)
         logoContainerView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: 150))
         

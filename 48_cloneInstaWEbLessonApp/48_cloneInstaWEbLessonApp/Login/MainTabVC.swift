@@ -34,9 +34,9 @@ class MainTabVC: UITabBarController ,UITabBarControllerDelegate{
               
               let feed = createNavController(viewcontroller: FeedController(collectionViewLayout: UICollectionViewLayout()), title: "Feed", selectedImage: #imageLiteral(resourceName: "home"), unselectedImage: #imageLiteral(resourceName: "home"))
               let search = createNavController(viewcontroller: UIViewController(), title: "search", selectedImage: #imageLiteral(resourceName: "search"), unselectedImage: #imageLiteral(resourceName: "search"))
-              let newPost = createNavController(viewcontroller: UIViewController(), title: "Post", selectedImage: #imageLiteral(resourceName: "sms"), unselectedImage: #imageLiteral(resourceName: "sms"))
+                 let newPost = createNavController(viewcontroller: UIViewController(), title: "Post", selectedImage: #imageLiteral(resourceName: "sms"), unselectedImage: #imageLiteral(resourceName: "sms"))
               let likes = createNavController(viewcontroller : UIViewController(), title: "Likes", selectedImage: #imageLiteral(resourceName: "heart"), unselectedImage: #imageLiteral(resourceName: "heart"))
-              let profile = createNavController(viewcontroller: UIViewController(), title: "Profile", selectedImage: #imageLiteral(resourceName: "user_male"), unselectedImage: #imageLiteral(resourceName: "user_male") )
+              let profile = createNavController(viewcontroller: UserprofileController(collectionViewLayout: UICollectionViewFlowLayout()), title: "Profile", selectedImage: #imageLiteral(resourceName: "user_male"), unselectedImage: #imageLiteral(resourceName: "user_male") )
               
               //MARK: - controllers for tabbar
               viewControllers = [feed,search,newPost,likes,profile]

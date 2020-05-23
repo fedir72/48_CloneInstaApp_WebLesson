@@ -11,9 +11,10 @@
 		A3237ABB246EE9EF00FEAF50 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */; };
 		A329F896246EB444000FCA09 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329F895246EB444000FCA09 /* SignUpController.swift */; };
 		A32E4AB72475210C006A0D3A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E4AB62475210C006A0D3A /* FeedController.swift */; };
+		A339B7162479683300CB64F1 /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339B7152479683300CB64F1 /* FireBase.swift */; };
 		A355B03B247558B400A59ACD /* UserprofileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355B03A247558B400A59ACD /* UserprofileController.swift */; };
 		A355B03D2475658A00A59ACD /* Userprofileheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355B03C2475658A00A59ACD /* Userprofileheader.swift */; };
-		A355B040247574FB00A59ACD /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355B03F247574FB00A59ACD /* ModelUser.swift */; };
+		A355B040247574FB00A59ACD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355B03F247574FB00A59ACD /* User.swift */; };
 		A3983BF424715F50005AC37C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3983BF324715F50005AC37C /* GoogleService-Info.plist */; };
 		A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE05DA2472D19000975C68 /* MainTabVC.swift */; };
 		A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17A87246D5BF200836CE0 /* AppDelegate.swift */; };
@@ -30,9 +31,10 @@
 		A3237ABA246EE9EF00FEAF50 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A329F895246EB444000FCA09 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A32E4AB62475210C006A0D3A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		A339B7152479683300CB64F1 /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		A355B03A247558B400A59ACD /* UserprofileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserprofileController.swift; sourceTree = "<group>"; };
 		A355B03C2475658A00A59ACD /* Userprofileheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userprofileheader.swift; sourceTree = "<group>"; };
-		A355B03F247574FB00A59ACD /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		A355B03F247574FB00A59ACD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3983BF324715F50005AC37C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3BE05DA2472D19000975C68 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		A3D17A84246D5BF200836CE0 /* 48_cloneInstaWEbLessonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 48_cloneInstaWEbLessonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,12 +71,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A32E4AB52475207D006A0D3A /* Controllers */ = {
+		A32E348B2479553900A3F2CD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A355B03A247558B400A59ACD /* UserprofileController.swift */,
+				A355B03C2475658A00A59ACD /* Userprofileheader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A32E348C2479554D00A3F2CD /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				A32E4AB62475210C006A0D3A /* FeedController.swift */,
-				A355B03A247558B400A59ACD /* UserprofileController.swift */,
-				A355B03C2475658A00A59ACD /* Userprofileheader.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		A32E348D2479556400A3F2CD /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		A32E4AB52475207D006A0D3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3D17A9B246D5E7400836CE0 /* Login */,
+				A32E348D2479556400A3F2CD /* TabController */,
+				A32E348C2479554D00A3F2CD /* Feed */,
+				A32E348B2479553900A3F2CD /* Profile */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -82,7 +109,8 @@
 		A355B03E247574D900A59ACD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A355B03F247574FB00A59ACD /* ModelUser.swift */,
+				A355B03F247574FB00A59ACD /* User.swift */,
+				A339B7152479683300CB64F1 /* FireBase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,9 +140,8 @@
 				A3D17A89246D5BF200836CE0 /* SceneDelegate.swift */,
 				A3D17A8D246D5BF200836CE0 /* Main.storyboard */,
 				A355B03E247574D900A59ACD /* Models */,
-				A32E4AB52475207D006A0D3A /* Controllers */,
 				A3D17A9E246D655400836CE0 /* Utils */,
-				A3D17A9B246D5E7400836CE0 /* Login */,
+				A32E4AB52475207D006A0D3A /* Controllers */,
 				A3D17A90246D5BF300836CE0 /* Assets.xcassets */,
 				A3D17A92246D5BF300836CE0 /* LaunchScreen.storyboard */,
 				A3D17A95246D5BF300836CE0 /* Info.plist */,
@@ -273,9 +300,10 @@
 				A3D17A88246D5BF200836CE0 /* AppDelegate.swift in Sources */,
 				A3D17A8A246D5BF200836CE0 /* SceneDelegate.swift in Sources */,
 				A355B03B247558B400A59ACD /* UserprofileController.swift in Sources */,
-				A355B040247574FB00A59ACD /* ModelUser.swift in Sources */,
+				A355B040247574FB00A59ACD /* User.swift in Sources */,
 				A3BE05DB2472D19000975C68 /* MainTabVC.swift in Sources */,
 				A3D17AA0246D656E00836CE0 /* Utils.swift in Sources */,
+				A339B7162479683300CB64F1 /* FireBase.swift in Sources */,
 				A32E4AB72475210C006A0D3A /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,28 +20,28 @@ class UserprofileController: UICollectionViewController , UICollectionViewDelega
         self.collectionView.backgroundColor = .white
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.register(Userprofileheader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: userReuseIdentifier)
+        
         fetchCurrentUser() //извлечение данных юзера
     }
     
     //MARK: - api Firebase (извлечение юзера)
     
-    func fetchCurrentUser() {
-        guard let currentUid = Auth.auth().currentUser?.uid else {return}
-        Firestore.firestore().collection("users").document(currentUid).getDocument { (snapshot, err) in
-            if let error = err {
-                print("failed to catch user",error.localizedDescription)
-                return
-            }
-            guard let dicTionAry = snapshot?.data() else {return}
-            print(snapshot?.data() ?? "")
+    var user: User?
+    
+   fileprivate func fetchCurrentUser() {
+    //применение расширения (файл firebace)
+    Firestore.firestore().fetchCurrentUSER { (user, err) in
+        if let err = err {
+            print("failed to fetch user :" , err.localizedDescription)
+            return
         }
-        
-        
+        self.user = user
+        print(user?.username ?? "")
+        self.navigationItem.title = user?.username 
     }
     
-    
-    
-
+    }
+  
   //MARK: - UICOllectionViewDatasource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

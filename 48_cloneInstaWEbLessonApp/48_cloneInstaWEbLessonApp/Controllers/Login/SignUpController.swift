@@ -99,7 +99,8 @@ class SignUpController: UIViewController , UIImagePickerControllerDelegate,UINav
         sighnUpButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
     }
     
-    //
+    //MARK: - HandleSignup
+    
     @objc fileprivate func handleSignUp() {
       //print("signUp")
         self.handletaDismiss() //убрать клаву
@@ -143,15 +144,16 @@ class SignUpController: UIViewController , UIImagePickerControllerDelegate,UINav
                     
                 print("ссылка на картинку получена")
                 
-                guard let uid = user?.user.uid else { return }
-                let dictionaryValues = ["name": fullname, "username": username ,"profileImageUrl": profileImageURL]
-                let values = [uid: dictionaryValues]
-                    Firestore.firestore().collection("users").document(uid).setData(values) { (error) in
+                    guard let uid = Auth.auth().currentUser?.uid else {return}
+                    
+                    let docData = ["uid": uid, "name": fullname, "username": username ,"profileImageUrl": profileImageURL]
+                
+                    Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
                         if let eror  = error {
                             print("Failed ", eror.localizedDescription)
                             return
                         }
-                        print("данные   сохранены")
+                        print("данные ok ")
                     }
                    
                 }
